@@ -1,4 +1,4 @@
-# PandaTutor
+# Eduzen
 
 A full featured tutoring marketplace built with **Next.js**, **Express**, **Prisma**, **Tailwind CSS**, **Framer Motion**, **TanStack React Query v5**, and **Zustand**, connecting students with expert tutors for personalized, on demand learning sessions. Features role based dashboards for students, tutors, and admins, real time booking management, tutor availability scheduling, student reviews, and a fully responsive UI with smooth animations.
 
@@ -6,8 +6,8 @@ A full featured tutoring marketplace built with **Next.js**, **Express**, **Pris
 
 ## Live Link
 
-- Frontend: [UI](https://panda-tutor-frontend.vercel.app/)
-- Backend: [API Server](https://pandatutor-backend.onrender.com/)
+- Frontend: [UI](https://eduzen-livid.vercel.app/)
+- Backend: [API Server](https://eduzen-backend.onrender.com/)
 
 ---
 
@@ -95,8 +95,8 @@ A full featured tutoring marketplace built with **Next.js**, **Express**, **Pris
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/noor00111/PandaTutor-frontend
-git clone https://github.com/noor00111/PandaTutor-backend
+git clone https://github.com/noor00111/Eduzen
+git clone https://github.com/noor00111/eduzen-backend
 
 ```
 
@@ -129,6 +129,6 @@ npm run dev
 
 | Role | Email | Password |
 |------|-------|----------|
-| Admin | admin@PandaTutor.com | admin123 |
+| Admin | admin@Eduzen.com | admin123 |
 | Tutor | tutor1@test.com | tutor123 |
 | Student | student1@test.com | student123 |

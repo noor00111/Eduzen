@@ -16,7 +16,7 @@ export default function Footer() {
                 <BookOpen className="w-6 h-6" />
               </div>
               <span className="font-serif font-black text-3xl tracking-tight text-brand-900">
-                PandaTutor
+                Eduzen
               </span>
             </Link>
             <p className="text-brand-800/70 text-md max-w-sm leading-relaxed font-sans mb-8">
@@ -94,7 +94,7 @@ export default function Footer() {
             </Link>
           </div>
             <p className="text-[10px] text-brand-800/40 font-black uppercase tracking-[0.2em]">
-              © {new Date().getFullYear()} PandaTutor Platform.
+              © {new Date().getFullYear()} Eduzen Platform.
             </p>
           </div>
         </div>

@@ -19,7 +19,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: 'PandaTutor',
+  title: 'Eduzen',
   description: 'Book personalized learning sessions with expert tutors around the globe.',
   icons: {
     icon: '/images/favIcon.png'

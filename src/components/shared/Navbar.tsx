@@ -81,7 +81,7 @@ export default function Navbar() {
               <BookOpen className="text-accent-300 w-6 h-6 group-hover:rotate-12 transition-transform" />
             </div>
             <span className="font-black text-2xl tracking-tighter text-brand-900 group-hover:text-brand-600 transition-colors">
-              PandaTutor
+              Eduzen
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-12">

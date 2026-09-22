@@ -13,7 +13,7 @@ export const useAuthStore = create<AuthState>()(
       setHydrated: (state) => set({ isHydrated: state }),
     }),
     {
-      name: 'PandaTutor-auth',
+      name: 'Eduzen-auth',
       onRehydrateStorage: () => (state) => {
         state?.setHydrated(true);
       },

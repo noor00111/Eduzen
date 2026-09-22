@@ -27,7 +27,7 @@ export default function ChooseUs() {
           <motion.p
             variants={fadeUp}
             className="max-w-3xl mx-auto subtitle text-md">
-            PandaTutor was created to change the way people learn by making it easy for everyone, no matter their background, to access and highly personalized to each learner's journey. With PandaTutor, nothing can get in the way of your growth!
+            Eduzen was created to change the way people learn by making it easy for everyone, no matter their background, to access and highly personalized to each learner's journey. With Eduzen, nothing can get in the way of your growth!
           </motion.p>
         </motion.div>
 

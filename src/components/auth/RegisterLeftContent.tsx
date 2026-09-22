@@ -26,7 +26,7 @@ export function RegisterLeftContent() {
 
         <p className="text-base font-medium leading-relaxed" style={{ color: 'rgba(245, 251, 230, 0.75)' }}>
           Whether you want to learn a new skill or share your
-          expertise, PandaTutor connects you with the right people.
+          expertise, Eduzen connects you with the right people.
         </p>
       </motion.div>
 
