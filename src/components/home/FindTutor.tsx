@@ -7,9 +7,9 @@ import { steps } from '@/src/utils/steps';
 
 export default function FindTutor() {
   return (
-    <section className="pb-28">
+    <div className="pb-28 mt-10">
       <h2 className="text-4xl md:text-5xl font-black mb-10 text-center leading-tight"
-        style={{ color: '#233D4D', fontFamily: 'var(--font-playfair)' }}>
+        style={{ color: '#2D1F58', fontFamily: 'var(--font-playfair)' }}>
         Find Your Perfect Tutor
       </h2>
 
@@ -51,8 +51,7 @@ export default function FindTutor() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.15 }}
               viewport={{ once: true }}
-              className="p-6 rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 flex gap-5 items-start group"
-            >
+              className="p-6 rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 flex gap-5 items-start group">
               <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-brand-100 group-hover:bg-brand-500 transition">
                 <Icon className="w-6 h-6 text-brand-500 group-hover:text-white transition" />
               </div>
@@ -73,17 +72,6 @@ export default function FindTutor() {
           ))}
         </div>
       </div>
-
-      <div className="text-center mt-24">
-        <p className="text-lg text-slate-600 mb-6">
-          You are just one step away from transforming your learning journey!
-        </p>
-        <Link href="/tutors">
-          <button className="px-12 py-5 rounded-full font-bold bg-accent-400 text-white transition shadow-xl hover:scale-105">
-            Get Started Now
-          </button>
-        </Link>
-      </div>
-    </section>
+    </div>
   );
 }

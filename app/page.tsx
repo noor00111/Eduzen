@@ -7,10 +7,7 @@ import TopTutor from "../src/components/home/TopTutor";
 
 export default function Home() {
   return (
-    <div
-      className="flex flex-col w-full overflow-hidden"
-      style={{ backgroundColor: "#F5FAE1", color: "#433636" }}
-    >
+    <div className="flex flex-col w-full overflow-hidden">
       <Hero></Hero>
       <TopTutor></TopTutor>
       <ChooseUs></ChooseUs>
