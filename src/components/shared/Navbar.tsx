@@ -12,7 +12,6 @@ export default function Navbar() {
   const { user, logout, isHydrated } = useAuthStore();
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
-
   const handleLogout = () => { logout(); setMobileOpen(false); router.push('/'); };
   const close = () => setMobileOpen(false);
   const linkClass = 'text-sm font-bold text-brand-700/70 hover:text-brand-500 transition-colors';
@@ -73,26 +72,17 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 w-full backdrop-blur-md"
-      style={{
-        background: 'rgba(245,240,255,0.82)',
-        borderBottom: '1px solid rgba(212,184,216,0.40)',
-      }}>
+      className="sticky top-0 z-50 w-full backdrop-blur-md bg-[rgba(245,240,255,0.82)] border-b border-[rgba(212,184,216,0.40)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
 
           <Link href="/" className="flex items-center gap-3 group">
             <div
-              className="text-white p-2 rounded-2xl transition-all duration-300"
-              style={{
-                background: 'linear-gradient(135deg, #7B68C5, #6255A8)',
-                boxShadow: '0 6px 20px rgba(123,104,197,0.28)',
-              }}>
-              <BookOpen className="w-6 h-6 group-hover:rotate-12 transition-transform" style={{ color: '#EDE8FA' }} />
+              className="text-white p-2 rounded-2xl transition-all duration-300 bg-[linear-gradient(135deg,#7B68C5,#6255A8)] shadow-[0_6px_20px_rgba(123,104,197,0.28)]">
+              <BookOpen className="w-6 h-6 group-hover:rotate-12 transition-transform text-brand-100" />
             </div>
             <span
-              className="font-black text-2xl tracking-tighter group-hover:text-brand-500 transition-colors"
-              style={{ color: '#2D1F58' }}>
+              className="font-black text-2xl tracking-tighter group-hover:text-brand-500 transition-colors text-brand-900">
               Eduzen
             </span>
           </Link>
@@ -104,9 +94,7 @@ export default function Navbar() {
             {renderLinks()}
           </div>
 
-          <button
-            className="md:hidden p-2 rounded-xl transition-colors"
-            style={{ color: '#7B68C5' }}
+          <button className="md:hidden p-2 rounded-xl transition-colors text-brand-500"
             onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -120,11 +108,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: 'easeInOut' }}
-            className="md:hidden overflow-hidden backdrop-blur-md"
-            style={{
-              background: 'rgba(245,240,255,0.96)',
-              borderTop: '1px solid rgba(212,184,216,0.30)',
-            }}>
+            className="md:hidden overflow-hidden backdrop-blur-md bg-[rgba(245,240,255,0.96)] border-t border-[rgba(212,184,216,0.30)]">
             <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-5">
               {(!user || user?.role === 'STUDENT') && (
                 <Link href="/tutors" onClick={close} className={linkClass}>Browse</Link>

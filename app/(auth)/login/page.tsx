@@ -4,7 +4,7 @@ import { LoginForm } from '@/src/components/auth/LoginForm';
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen flex relative overflow-hidden">
+    <div className="min-h-screen flex relative overflow-hidden bg-[#F5F0FF]">
       <AuthLeftPanel>
         <LoginLeftContent />
       </AuthLeftPanel>

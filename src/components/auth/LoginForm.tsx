@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Mail, Lock, Sparkles, ChevronRight, GraduationCap } from 'lucide-react';
+import { Mail, Lock, Sparkles, ChevronRight } from 'lucide-react';
 import { fadeUp } from '@/src/lib/animation';
 import { AuthFormInput } from './FormInput';
 
@@ -16,7 +16,6 @@ export function LoginForm() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [focused, setFocused] = useState<string | null>(null);
-
   const setAuth = useAuthStore((state) => state.setAuth);
   const router = useRouter();
 
@@ -43,8 +42,7 @@ export function LoginForm() {
     <motion.div initial="hidden" animate="visible" className="w-full max-w-md relative z-10">
       <motion.div variants={fadeUp} custom={0} className="mb-8">
         <div className="flex items-center gap-2 mb-3">
-          <Sparkles className="w-4 h-4" style={{ color: 'var(--color-accent-400)' }} />
-          <span className="text-xs font-bold uppercase tracking-[0.3em] style={{ color: 'var(--color-brand-600)' }}" >Sign in</span>
+          <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand-600">Sign In to Continue!</span>
         </div>
       </motion.div>
 
@@ -84,17 +82,12 @@ export function LoginForm() {
             disabled={loading}
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full h-14 rounded-2xl font-black text-base flex items-center justify-center gap-2 shadow-lg transition-opacity disabled:opacity-60"
-            style={{
-              background: 'linear-gradient(135deg, var(--color-brand-500) 0%, var(--color-brand-700) 100%)',
-              color: 'var(--color-body-500)',
-            }}>
+            className="w-full h-14 rounded-2xl font-black text-base flex items-center justify-center gap-2 shadow-lg transition-opacity disabled:opacity-60 bg-[linear-gradient(135deg,var(--color-brand-500)_0%,var(--color-brand-700)_100%)] text-body-500">
             {loading ? (
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                className="w-5 h-5 rounded-full border-2"
-                style={{ borderColor: '#F5FAE1', borderTopColor: 'transparent' }}/>
+                className="w-5 h-5 rounded-full border-2 border-[#F5FAE1] border-t-transparent"/>
             ) : (
               <>Sign In <ChevronRight className="w-5 h-5" /></>
             )}
@@ -102,9 +95,9 @@ export function LoginForm() {
         </motion.div>
       </form>
 
-      <motion.p variants={fadeUp} custom={4} className="text-sm text-center mt-6 font-medium" style={{ color: 'var(--color-brand-600)' }}>
+      <motion.p variants={fadeUp} custom={4} className="text-sm text-center mt-6 font-medium text-brand-600">
         Don&apos;t have an account?{' '}
-        <Link href="/register" className="font-black transition-colors" style={{ color: 'var(--color-brand-500)' }}>
+        <Link href="/register" className="font-black transition-colors text-brand-500">
           Sign up
         </Link>
       </motion.p>

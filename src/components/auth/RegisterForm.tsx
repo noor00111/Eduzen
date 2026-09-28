@@ -7,18 +7,12 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import {Mail, Lock, User, Sparkles, ChevronRight, GraduationCap, BookOpen} from 'lucide-react';
+import {Mail, Lock, User, ChevronRight, GraduationCap, BookOpen} from 'lucide-react';
 import { fadeUp } from '@/src/lib/animation';
 import { AuthFormInput } from './FormInput';
 
 export function RegisterForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    role: 'STUDENT',
-  });
-
+  const [formData, setFormData] = useState({name: '', email: '', password: '', role: 'STUDENT'});
   const [loading, setLoading] = useState(false);
   const [focused, setFocused] = useState<string | null>(null);
   const setAuth = useAuthStore((state) => state.setAuth);
@@ -42,10 +36,7 @@ export function RegisterForm() {
     } catch (error: unknown) {
       const msg = (
         error as {
-          response?: {
-            data?: {
-              message?: string;
-            };
+          response?: { data?: {message?: string;};
           };
         }
       )?.response?.data?.message;
@@ -86,10 +77,8 @@ export function RegisterForm() {
 
       <motion.div variants={fadeUp} custom={0} className="mb-8">
         <div className="flex items-center gap-2 mb-3">
-          <Sparkles className="w-4 h-4" style={{ color: 'var(--color-accent-400)' }}/>
-
-          <span className="text-xs font-bold uppercase tracking-[0.3em]" style={{ color: 'var(--color-brand-600)' }}>
-            Create account
+          <span className="text-md font-bold uppercase tracking-[0.3em] text-brand-600">
+            Create Your Account!
           </span>
         </div>
       </motion.div>
@@ -141,8 +130,7 @@ export function RegisterForm() {
 
         <motion.div variants={fadeUp} custom={4}>
           <label
-            className="block text-xs font-bold uppercase tracking-[0.2em] mb-3"
-            style={{ color: 'var(--color-brand-600)' }}>
+            className="block text-xs font-bold uppercase tracking-[0.2em] mb-3 text-brand-600">
             I am a...
           </label>
 
@@ -157,12 +145,7 @@ export function RegisterForm() {
                   onClick={() => patch('role', role)}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className="flex flex-col items-center gap-1.5 p-4 rounded-2xl transition-all duration-200"
-                  style={{
-                    backgroundColor: selected ? 'var(--color-brand-500)' : 'var(--color-surface-400)',
-                    border: `2px solid ${selected? 'var(--color-brand-500)' : 'transparent'}`,
-                    color: selected ? 'var(--color-body-500)': 'var(--color-brand-500)',
-                  }}>
+                  className={`flex flex-col items-center gap-1.5 p-4 rounded-2xl transition-all duration-200 border-2 ${selected ? 'bg-brand-500 border-brand-500 text-body-500' : 'bg-surface-400 border-transparent text-brand-500'}`}>
 
                   <Icon className="w-5 h-5 text-accent-400" />
                   <span className="font-black text-sm">{label}</span>
@@ -179,15 +162,13 @@ export function RegisterForm() {
             disabled={loading}
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full h-14 rounded-2xl font-black text-base flex items-center justify-center gap-2 shadow-lg transition-opacity disabled:opacity-60"
-            style={{background:'linear-gradient(135deg, var(--color-brand-500) 0%, var(--color-brand-700) 100%)', color: 'var(--color-body-500)'}}>
-           
+            className="w-full h-14 rounded-2xl font-black text-base flex items-center justify-center gap-2 shadow-lg transition-opacity disabled:opacity-60 bg-[linear-gradient(135deg,var(--color-brand-500)_0%,var(--color-brand-700)_100%)] text-body-500">
+
             {loading ? (
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{duration: 1, repeat: Infinity, ease: 'linear'}}
-                className="w-5 h-5 rounded-full border-2"
-                style={{borderColor: 'var(--color-body-500)',borderTopColor: 'transparent'}}
+                className="w-5 h-5 rounded-full border-2 border-body-500 border-t-transparent"
               />
             ) : (
               <>
@@ -198,10 +179,10 @@ export function RegisterForm() {
       </form>
 
       <motion.p variants={fadeUp} custom={6}
-        className="text-sm text-center mt-6 font-medium" style={{ color: 'var(--color-brand-600)' }}>
+        className="text-sm text-center mt-6 font-medium text-brand-600">
         Already have an account?{' '}
 
-        <Link href="/login" className="font-black transition-colors" style={{ color: 'var(--color-brand-500)' }}>
+        <Link href="/login" className="font-black transition-colors text-brand-500">
           Sign in
         </Link>
       </motion.p>

@@ -4,7 +4,7 @@ import { RegisterForm } from '@/src/components/auth/RegisterForm';
 
 export default function RegisterPage() {
   return (
-    <div className="min-h-screen flex relative overflow-hidden" style={{ backgroundColor: '#F5FAE1' }}>
+    <div className="min-h-screen flex relative overflow-hidden bg-[#F5F0FF]">
       <AuthLeftPanel>
         <RegisterLeftContent />
       </AuthLeftPanel>

@@ -10,8 +10,7 @@ export function LoginLeftContent() {
         transition={{ delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
           
         <h1
-          className="text-5xl font-black leading-tight mb-6"
-          style={{ color: 'var(--color-body-500)' }}>
+          className="text-5xl font-black leading-tight mb-6 text-body-500">
           Continue Your<br />
           Learning Journey!
         </h1>
