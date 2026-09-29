@@ -1,6 +1,5 @@
 'use client';
 
-import { Shield } from 'lucide-react'
 import { useAuthStore } from '@/src/store/useAuthStore';
 import {Card, CardContent, CardHeader,CardTitle} from '@/src/components/ui/Card';
 import { AccessDenied } from '@/src/components/ui/AccessDenied'
@@ -17,13 +16,9 @@ export default function AdminUsersPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="flex items-center gap-3 mb-8">
-        <Shield className="w-8 h-8 text-accent-400" />
-
-        <h1 className="text-4xl md:text-5xl font-black text-brand-800">
+        <h1 className="mb-8 text-4xl md:text-5xl font-black text-brand-800 text-center">
           User Management
         </h1>
-      </div>
 
       <Card className="shadow-md border-slate-200">
         <CardHeader className="bg-slate-50 border-b border-slate-200">

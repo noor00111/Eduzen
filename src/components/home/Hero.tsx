@@ -24,14 +24,14 @@ export default function Hero() {
 
             <motion.div variants={fadeUp} className="mb-8">
               <span
-                className="inline-flex items-center px-7 py-3 rounded-full border text-sm font-bold tracking-[0.25em] uppercase backdrop-blur-xl border-[rgba(123,104,197,0.20)] bg-[linear-gradient(135deg,rgba(212,184,216,0.25),rgba(255,255,255,0.60))] text-brand-700 shadow-[0_10px_30px_rgba(154,142,209,0.14)]">
+                className="px-2 py-1 rounded-full border text-xs font-bold tracking-[0.25em] uppercase backdrop-blur-xl border-[rgba(123,104,197,0.20)] bg-[linear-gradient(135deg,rgba(212,184,216,0.25),rgba(255,255,255,0.60))] text-brand-700 shadow-[0_10px_30px_rgba(154,142,209,0.14)]">
                 Learn. Grow. Succeed!
               </span>
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
-              className="text-5xl sm:text-6xl lg:text-8xl font-black leading-[0.95] tracking-[-0.05em] mb-8 font-serif text-brand-900">
+              className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-[-0.05em] mb-8 font-serif text-brand-900">
               Your Journey to Success
               Starts Smoothly Here!
             </motion.h1>
@@ -39,9 +39,8 @@ export default function Hero() {
             <motion.p
               variants={fadeUp}
               className="text-lg md:text-xl leading-relaxed max-w-2xl mb-10 text-[#6B5FA0]">
-              Get in touch with knowledgeable tutors, schedule
-              individualized lessons, and expedite your educational
-              process, all in one location!
+              Access a network of skilled tutors, connect with the right expert for your goals, and schedule personalized sessions that fit your needs. 
+              Our platform brings tutoring, scheduling, and meaningful learning experiences together in one place.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-5 mb-8">
@@ -72,21 +71,7 @@ export default function Hero() {
         <motion.div
           variants={fadeUp}
           initial="hidden"
-          animate="visible"
-          className="relative">
-
-          <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            className="absolute -top-6 -left-6 rounded-2xl px-5 py-4 z-20 hidden md:block bg-[rgba(255,255,255,0.90)] backdrop-blur-[14px] border border-[rgba(212,184,216,0.35)] shadow-[0_12px_40px_rgba(123,104,197,0.15)]">
-            <p className="text-sm font-medium text-brand-400">
-              Trusted by Students
-            </p>
-            <h4 className="text-xl font-black text-brand-900">
-              10K+ Learners
-            </h4>
-          </motion.div>
-
+          animate="visible">
           <div className="overflow-hidden rounded-full shadow-[0_30px_80px_rgba(123,104,197,0.32)]">
             <Image src={heroImage}
               alt="hero image"

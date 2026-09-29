@@ -6,7 +6,7 @@ import { reasons } from '@/src/utils/reasons';
 
 export default function ChooseUs() {
   return (
-    <div className="my-20 bg-body-500">
+    <div className="mt-20 bg-body-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.div

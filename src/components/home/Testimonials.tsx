@@ -40,7 +40,7 @@ export default function Testimonials() {
   const { quote, name, role } = testimonials[index];
 
   return (
-    <div className="my-16 bg-body-500">
+    <div className="my-20 bg-body-500">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2

@@ -16,7 +16,7 @@ const benefits = [
 
 export default function AboutSection() {
   return (
-    <div className="my-24 overflow-hidden bg-body-500">
+    <div className="mt-24 overflow-hidden bg-body-500">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -67,8 +67,8 @@ export default function AboutSection() {
 
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6 text-brand-900 font-serif">
-              Accelerate your learning with expert guidance
+              className="text-3xl md:text-4xl font-black leading-tight mb-6 text-brand-900 font-serif">
+              Accelerate Your Learning with Expert Guidance
             </motion.h2>
 
             <motion.p
