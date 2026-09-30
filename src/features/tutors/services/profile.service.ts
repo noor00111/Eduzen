@@ -10,11 +10,7 @@ export const getCategories = async () => {
   return res.data.data.categories;
 };
 
-export const updateTutorProfile = async (data: {
-  bio: string;
-  hourlyRate: number;
-  subjectIds: string[];
-}) => {
+export const updateTutorProfile = async (data: {bio: string; hourlyRate: number; subjectIds: string[]; photoUrl?: string;}) => {
   const res = await api.put('/tutors/profile', data);
   return res.data;
 };

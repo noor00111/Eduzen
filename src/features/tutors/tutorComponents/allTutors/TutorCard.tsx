@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {Star} from 'lucide-react';
 import {Card, CardContent, CardHeader,CardTitle,} from '@/src/components/ui/Card';
@@ -20,8 +21,12 @@ export function TutorCard({ tutor }: TutorCardProps) {
         </div>
 
         <CardHeader className="p-7">
-            <div className="mb-3 w-16 h-16 rounded-3xl bg-linear-to-br from-brand-500 to-brand-700 flex items-center justify-center text-3xl font-black text-white shadow-xl ring-4 ring-white/50">
-              {tutor.user.name.charAt(0)}
+            <div className="relative mb-3 w-16 h-16 rounded-3xl overflow-hidden bg-linear-to-br from-brand-500 to-brand-700 flex items-center justify-center text-3xl font-black text-white shadow-xl ring-4 ring-white/50">
+              {tutor.photoUrl ? (
+                <Image src={tutor.photoUrl} alt={tutor.user.name} fill className="object-cover" />
+              ) : (
+                tutor.user.name.charAt(0)
+              )}
             </div>
 
 

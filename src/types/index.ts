@@ -50,6 +50,7 @@ export interface Tutor {
   rating: number;
   hourlyRate: number;
   bio?: string;
+  photoUrl?: string;
   user: { name: string };
   subjects: Subject[];
 }
@@ -182,7 +183,9 @@ export interface TutorProfileHeroProps {
     tutorProfile?: {
       hourlyRate: number;
       rating: number;
+      totalReviews?: number;
       bio?: string;
+      photoUrl?: string;
       subjects?: { id: string; name: string }[];
     };
   };
@@ -194,6 +197,9 @@ export interface TutorProfileContentProps {
   tutorProfile: | {
         bio?: string;
         hourlyRate?: number;
+        rating?: number;
+        totalReviews?: number;
+        photoUrl?: string;
         subjects?: { id: string; name: string }[];
       } | undefined;
   formData: {
@@ -212,4 +218,7 @@ export interface TutorProfileContentProps {
   handleSubmit: (e: React.SyntheticEvent<HTMLFormElement>) => void;
   handleCancel: () => void;
   isPending: boolean;
+  isUploadingPhoto: boolean;
+  onPhotoSelect: (file: File) => void;
+  pendingPhotoUrl?: string;
 }

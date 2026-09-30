@@ -8,30 +8,16 @@ import { ProfileContent } from "@/src/features/tutors/tutorComponents/profile/Pr
 
 export default function TutorProfile() {
   const { user } = useAuthStore();
-
-  const {
-    profile,
-    isLoading,
-    categories,
-    isEditing,
-    setIsEditing,
-    formData,
-    setFormData,
-    selectedSubjects,
-    toggleSubject,
-    handleSubmit,
-    handleCancel,
-    isPending,
-  } = useTutorProfile();
+  const {profile, categories, isEditing, setIsEditing, formData, setFormData, selectedSubjects, toggleSubject, handleSubmit, handleCancel, isPending, isUploadingPhoto, onPhotoSelect, pendingPhotoUrl} = useTutorProfile();
 
   if (!user || user.role !== "TUTOR") {
     return <AccessDenied role="TUTOR" />;
   }
 
   return (
-    <div
-      className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
       <ProfileHero profile={profile} />
+      
       <ProfileContent
         isEditing={isEditing}
         setIsEditing={setIsEditing}
@@ -44,6 +30,9 @@ export default function TutorProfile() {
         handleSubmit={handleSubmit}
         handleCancel={handleCancel}
         isPending={isPending}
+        isUploadingPhoto={isUploadingPhoto}
+        onPhotoSelect={onPhotoSelect}
+        pendingPhotoUrl={pendingPhotoUrl}
       />
     </div>
   );
