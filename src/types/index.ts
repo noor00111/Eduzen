@@ -10,6 +10,7 @@ export interface User {
   name: string;
   email: string;
   role: Role;
+  photoUrl?: string;
   isBanned?: boolean;
 }
 export interface AdminUser extends User{
@@ -161,7 +162,9 @@ export interface ReviewModalProps {
 }
 
 export interface ProfileOverviewCardProps {
-  profile: { name?: string; email?: string; role?: string } | undefined;
+  profile: { name?: string; email?: string; role?: string; photoUrl?: string } | undefined;
+  isUploadingPhoto: boolean;
+  onPhotoSelect: (file: File) => void;
 }
 
 export interface StudentProfileEditFormProps {

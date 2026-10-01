@@ -4,43 +4,40 @@ import { User } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAuthStore } from '@/src/store/useAuthStore';
 import { AccessDenied } from '@/src/components/ui/AccessDenied';
-import { BlobBackground } from '@/src/components/ui/BlobBackground';
 import { useStudentProfile } from '@/src/features/student/hooks/useStudentProfile';
 import { ProfileOverviewCard } from '@/src/features/student/studentComponents/profile/ProfileOverviewCard';
 import { ProfileEditForm } from '@/src/features/student/studentComponents/profile/ProfileEditForm';
 
 export default function StudentProfile() {
   const { user } = useAuthStore();
-  const { profile, isLoading, isEditing, formData, setFormData, handleSubmit, handleEdit, handleCancel, isPending } = useStudentProfile();
+  const {profile, isLoading, isEditing, formData, setFormData, handleSubmit, handleEdit, handleCancel, isPending, isUploadingPhoto, onPhotoSelect} = useStudentProfile();
 
   if (!user || user.role !== 'STUDENT') {
     return <AccessDenied role="STUDENT" />;
   }
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] bg-slate-50 relative overflow-hidden">
-      <BlobBackground />
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+    <div className="min-h-[calc(100vh-4rem)] bg-surface-200">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
         <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-black text-brand-800 mb-2 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-black text-brand-900 font-serif tracking-tight mb-2">
             My Profile
           </h1>
-          <p className="text-lg text-slate-500 mb-8 font-medium flex items-center">
-            <User className="w-5 h-5 mr-2 text-accent-400" />
+          <p className="text-brand-700/60 font-medium flex items-center gap-2">
+            <User className="w-4 h-4 text-brand-400" />
             Manage your personal information and preferences.
           </p>
         </motion.div>
 
         {isLoading ? (
           <div className="space-y-6">
-            <div className="h-48 bg-white/50 border border-slate-100 rounded-3xl animate-pulse shadow-sm" />
-            <div className="h-96 bg-white/50 border border-slate-100 rounded-3xl animate-pulse shadow-sm" />
+            <div className="h-40 bg-white border border-surface-300 rounded-[1.75rem] animate-pulse" />
+            <div className="h-72 bg-white border border-surface-300 rounded-[1.75rem] animate-pulse" />
           </div>
         ) : (
-          <div className="space-y-8">
+          <div className="space-y-6">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-              <ProfileOverviewCard profile={profile} />
+              <ProfileOverviewCard profile={profile} isUploadingPhoto={isUploadingPhoto} onPhotoSelect={onPhotoSelect} />
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
