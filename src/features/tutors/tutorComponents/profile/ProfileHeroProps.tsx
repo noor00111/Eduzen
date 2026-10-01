@@ -8,9 +8,6 @@ export function ProfileHero({ profile }: TutorProfileHeroProps) {
 
   return (
     <div className="relative max-w-6xl mx-auto mt-8 mb-6 rounded-4xl overflow-hidden bg-surface-200 border border-surface-400 shadow-[0_20px_60px_rgba(45,31,88,0.10)]">
-      <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-brand-200/25 blur-3xl" />
-      <div className="absolute -bottom-20 -left-16 w-64 h-64 rounded-full bg-accent-300/15 blur-3xl" />
-
       <div className="relative px-6 sm:px-10 py-8 sm:py-10 flex flex-col sm:flex-row gap-8 sm:items-center">
         <div className="relative shrink-0 mx-auto sm:mx-0">
           

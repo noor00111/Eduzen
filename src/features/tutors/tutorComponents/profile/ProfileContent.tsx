@@ -233,36 +233,6 @@ export function ProfileContent(
               )}
             </div>
           </div>
-
-          <div className="relative rounded-[1.75rem] overflow-hidden bg-[linear-gradient(120deg,#2D1F58,#4A3C86)] px-6 sm:px-10 py-10 text-center">
-            <div className="absolute -top-8 -left-8 w-40 h-40 rounded-full bg-white/5" />
-            <div className="absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-accent-500/10" />
-
-            <div className="relative">
-              <h3 className="text-2xl sm:text-3xl font-black text-white font-serif mb-2">
-                Ready to start learning?
-              </h3>
-              <p className="text-white/70 text-sm max-w-md mx-auto mb-7">
-                Book a personalized lesson and take the next step toward your learning goals.
-              </p>
-
-              <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3">
-                <button className="w-full sm:w-auto px-8 py-3.5 rounded-full font-black text-sm text-brand-900 bg-white hover:bg-white/90 shadow-lg transition-colors">
-                  Book a Session
-                </button>
-
-                <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm text-white border border-white/25 hover:bg-white/10 transition-colors">
-                  <MessageCircle className="w-4 h-4" />
-                  Message Tutor
-                </button>
-
-                <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm text-white border border-white/25 hover:bg-white/10 transition-colors">
-                  <Bookmark className="w-4 h-4" />
-                  Save Profile
-                </button>
-              </div>
-            </div>
-          </div>
         </>
       )}
     </div>
