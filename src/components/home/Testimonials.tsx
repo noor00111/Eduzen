@@ -8,7 +8,7 @@ import bgImage from '@/public/images/stories.png';
 
 const testimonials = [
   {
-    quote: 'Finding the right tutor used to take weeks. With SkillBridge I booked a session in minutes and my grades improved within a month. I believe in learning that actually moves you forward.',
+    quote: 'Finding the right tutor used to take weeks. With Eduzen I booked a session in minutes and my grades improved within a month. I believe in learning that actually moves you forward.',
     name: 'Sarah Chen',
     role: 'University Student',
   },
@@ -40,7 +40,7 @@ export default function Testimonials() {
   const { quote, name, role } = testimonials[index];
 
   return (
-    <div className="my-20 bg-body-500">
+    <div className="mt-24 bg-body-500">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2

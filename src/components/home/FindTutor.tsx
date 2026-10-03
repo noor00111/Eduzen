@@ -12,7 +12,7 @@ const STEP_BG_COLORS = ['bg-[rgba(123,104,197,0.12)]', 'bg-[rgba(34,197,94,0.12)
 
 export default function FindTutor() {
   return (
-    <div className="mt-20 overflow-hidden bg-[#F5F0FF]">
+    <div className="mt-24 overflow-hidden bg-[#F5F0FF]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-10 items-stretch">
           

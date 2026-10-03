@@ -5,26 +5,15 @@ import { Search, Filter, BookOpen, Sparkles } from 'lucide-react';
 
 import { Input } from '@/src/components/ui/Input';
 import { Button } from '@/src/components/ui/Button';
-
 import { useTutors } from '../../src/features/tutors/hooks/useTutors';
 import { TutorCard } from '../../src/features/tutors/tutorComponents/allTutors/TutorCard';
-
 import { Category } from '@/src/types';
 
 export default function TutorsListingPage() {
-  const {
-    searchTerm,
-    setSearchTerm,
-    category,
-    setCategory,
-    categories,
-    filteredTutors,
-    isLoading,
-  } = useTutors();
+  const {searchTerm, setSearchTerm, category, setCategory, categories, filteredTutors, isLoading} = useTutors();
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[var(--background)]">
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

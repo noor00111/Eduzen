@@ -19,10 +19,10 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: 'Eduzen',
+  title: 'Eduzen - Your Path to Better Learning',
   description: 'Book personalized learning sessions with expert tutors around the globe.',
   icons: {
-    icon: '/images/favIcon.png'
+    icon: '/images/logo.png'
   },
 };
 
