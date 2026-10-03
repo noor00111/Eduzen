@@ -20,7 +20,7 @@ export default function StudentProfile() {
     <div className="min-h-[calc(100vh-4rem)] bg-surface-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
         <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-black text-brand-900 font-serif tracking-tight mb-2">
+          <h1 className="text-4xl font-semibold text-brand-900 font-serif tracking-tight mb-2">
             My Profile
           </h1>
           <p className="text-brand-700/60 font-medium flex items-center gap-2">

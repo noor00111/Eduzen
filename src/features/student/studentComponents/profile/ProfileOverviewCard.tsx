@@ -1,18 +1,15 @@
-import { Mail, Camera, Loader2, Sparkles } from 'lucide-react';
+import { Mail, Camera, Loader2 } from 'lucide-react';
 import Image from 'next/image';
 import { ProfileOverviewCardProps } from '@/src/types';
 
 export function ProfileOverviewCard({ profile, isUploadingPhoto, onPhotoSelect }: ProfileOverviewCardProps) {
   return (
-    <div className="relative rounded-[1.75rem] overflow-hidden bg-white border border-surface-300 shadow-[0_4px_24px_rgba(45,31,88,0.06)]">
+    <div className="relative rounded-[1.75rem] overflow-hidden border border-surface-300 shadow-[0_4px_24px_rgba(45,31,88,0.06)]">
       <div className="relative px-6 sm:px-8 py-4 bg-[linear-gradient(120deg,#4A3C86,#7B68C5)]">
-        <p className="relative text-sm font-black text-white tracking-tight">Profile Overview</p>
+        <p className="relative text-sm font-semibold text-white tracking-tight">Profile Overview</p>
       </div>
 
       <div className="relative px-6 sm:px-8 py-7 overflow-hidden">
-        <Sparkles className="absolute right-10 top-6 w-4 h-4 text-accent-400/40" strokeWidth={1.5} />
-        <Sparkles className="absolute right-20 top-16 w-3 h-3 text-brand-400/30" strokeWidth={1.5} />
-
         <div className="relative flex items-center gap-5">
           <div className="relative w-20 h-20 shrink-0">
             <div className="w-20 h-20 rounded-2xl overflow-hidden flex items-center justify-center text-2xl font-black text-white bg-[linear-gradient(150deg,#4A3C86,#7B68C5)]">

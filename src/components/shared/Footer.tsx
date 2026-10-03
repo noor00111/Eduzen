@@ -1,6 +1,8 @@
 import Link from 'next/link';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 import { FaFacebookSquare, FaGithub, FaLinkedin } from "react-icons/fa";
+import logo from '@/public/images/logo.png';
 
 export default function Footer() {
   return (
@@ -10,9 +12,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
 
           <div className="col-span-1 md:col-span-5">
-            <Link href="/" className="flex items-center gap-3 mb-8 group inline-flex">
-              <div className="text-white p-2.5 rounded-2xl transition-all duration-300 group-hover:rotate-6 bg-[linear-gradient(135deg,#7B68C5,#6255A8)] shadow-[0_8px_24px_rgba(123,104,197,0.28)]">
-                <BookOpen className="w-6 h-6" />
+            <Link href="/" className="inline-flex items-center gap-2.5 mb-8 group">
+              <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
+                <div className="absolute inset-0 rounded-full bg-brand-400/20 blur-md scale-90 group-hover:scale-110 group-hover:bg-brand-400/30 transition-all duration-300" />
+                <Image
+                  src={logo}
+                  alt="Eduzen logo"
+                  className="relative w-10 h-10 object-contain group-hover:rotate-6 transition-transform duration-300"
+                />
               </div>
               <span className="font-serif font-black text-3xl tracking-tight text-brand-900">
                 Eduzen
@@ -58,12 +65,17 @@ export default function Footer() {
               Support
             </h3>
             <ul className="space-y-4">
-              {['Help Center', 'Terms of Service', 'Privacy Policy', 'Contact Us'].map((item) => (
-                <li key={item}>
+              {[
+                { label: 'Help Center', href: '#' },
+                { label: 'Terms of Service', href: '#' },
+                { label: 'Privacy Policy', href: '#' },
+                { label: 'Contact Us', href: '/contact' },
+              ].map((item) => (
+                <li key={item.label}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="text-sm font-medium hover:translate-x-1 transition-all inline-block text-[rgba(74,60,134,0.65)] hover:text-brand-500">
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}

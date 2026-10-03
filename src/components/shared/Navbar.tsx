@@ -1,20 +1,33 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useAuthStore } from '@/src/store/useAuthStore';
 import { Button } from '../ui/Button';
-import { LogOut, User as UserIcon, BookOpen, Menu, X } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { LogOut, User as UserIcon, Menu, X } from 'lucide-react';
+import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import logo from '@/public/images/logo.png';
+
+const PUBLIC_LINKS = [
+  { href: '/', label: 'Home' },
+  { href: '/tutors', label: 'Tutors' },
+  { href: '/contact', label: 'Contact' },
+];
 
 export default function Navbar() {
   const { user, logout, isHydrated } = useAuthStore();
   const router = useRouter();
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleLogout = () => { logout(); setMobileOpen(false); router.push('/'); };
   const close = () => setMobileOpen(false);
   const linkClass = 'text-sm font-bold text-brand-700/70 hover:text-brand-500 transition-colors';
+  const publicLinkClass = (href: string) =>
+    `relative text-sm font-bold transition-colors ${
+      pathname === href ? 'text-brand-600' : 'text-brand-700/70 hover:text-brand-500'
+    }`;
 
   const renderLinks = (mobile = false) => {
     if (!isHydrated) return null;
@@ -29,9 +42,9 @@ export default function Navbar() {
 
     if (!user) return (
       <div className={mobile ? 'flex flex-col gap-5' : 'flex items-center gap-6'}>
-        <Link href="/login" onClick={close} className={linkClass}>Log in</Link>
+        <Link href="/login" onClick={close} className="text-sm font-bold text-brand-700/70 hover:text-brand-500 transition-colors whitespace-nowrap">Log in</Link>
         <Link href="/register" onClick={close}>
-          <Button size="sm" className={`rounded-full font-bold ${mobile ? 'w-full' : ''}`}>
+          <Button size="sm" className={`rounded-full font-bold whitespace-nowrap ${mobile ? 'w-full' : ''}`}>
             Get Started
           </Button>
         </Link>
@@ -72,14 +85,19 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 w-full backdrop-blur-md bg-[rgba(245,240,255,0.82)] border-b border-[rgba(212,184,216,0.40)]">
+      className="sticky top-0 z-50 w-full backdrop-blur-md bg-[rgba(245,240,255,0.82)] border-b border-[rgba(110,87,113,0.4)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
 
-          <Link href="/" className="flex items-center gap-3 group">
-            <div
-              className="text-white p-2 rounded-2xl transition-all duration-300 bg-[linear-gradient(135deg,#7B68C5,#6255A8)] shadow-[0_6px_20px_rgba(123,104,197,0.28)]">
-              <BookOpen className="w-6 h-6 group-hover:rotate-12 transition-transform text-brand-100" />
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <div className="relative w-14 h-14 flex items-center justify-center shrink-0">
+              <div className="absolute inset-0 rounded-full bg-brand-400/20 blur-md scale-90 group-hover:scale-110 group-hover:bg-brand-400/30 transition-all duration-300" />
+              <Image
+                src={logo}
+                alt="Eduzen logo"
+                className="relative w-20 h-20 object-contain group-hover:-rotate-6 group-hover:scale-105 transition-transform duration-300"
+                priority
+              />
             </div>
             <span
               className="font-black text-2xl tracking-tighter group-hover:text-brand-500 transition-colors text-brand-900">
@@ -87,10 +105,29 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-12">
-            {(!user || user?.role === 'STUDENT') && (
-              <Link href="/tutors" className={linkClass}>Browse</Link>
-            )}
+          <div className="hidden md:flex items-center gap-10">
+            <div className="flex items-center gap-8">
+              {PUBLIC_LINKS.map((link) => {
+                const active = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`relative text-sm font-bold transition-colors ${
+                      active ? 'text-brand-600' : 'text-brand-700/70 hover:text-brand-600'
+                    }`}>
+                    {link.label}
+                    {active && (
+                      <motion.span
+                        layoutId="nav-active-underline"
+                        className="absolute left-0 right-0 -bottom-0.5 h-0.5 rounded-full bg-brand-500"
+                        transition={{ type: 'spring', stiffness: 400, damping: 32 }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
             {renderLinks()}
           </div>
 
@@ -110,9 +147,11 @@ export default function Navbar() {
             transition={{ duration: 0.22, ease: 'easeInOut' }}
             className="md:hidden overflow-hidden backdrop-blur-md bg-[rgba(245,240,255,0.96)] border-t border-[rgba(212,184,216,0.30)]">
             <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-5">
-              {(!user || user?.role === 'STUDENT') && (
-                <Link href="/tutors" onClick={close} className={linkClass}>Browse</Link>
-              )}
+              {PUBLIC_LINKS.map((link) => (
+                <Link key={link.href} href={link.href} onClick={close} className={publicLinkClass(link.href)}>
+                  {link.label}
+                </Link>
+              ))}
               {renderLinks(true)}
             </div>
           </motion.div>

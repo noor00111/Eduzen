@@ -132,12 +132,6 @@ export interface Booking {
   tutor: { name: string };
 }
 
-export interface BookingCardProps {
-  booking: Booking;
-  index: number;
-  onReview: (tutorId: string) => void;
-}
-
 interface StudentBooking {
   id: string;
   date: string;
